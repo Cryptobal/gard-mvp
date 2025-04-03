@@ -2,13 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: 'standalone',
+  output: 'export',
   images: {
     unoptimized: true,
   },
-  experimental: {
-    appDir: true,
-  },
+  distDir: '.next',
+  trailingSlash: true,
+  basePath: '',
+  assetPrefix: ''
 }
 
 module.exports = nextConfig 
