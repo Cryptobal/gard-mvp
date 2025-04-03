@@ -4,8 +4,13 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true,
+    domains: ['vercel.app'],
   },
   distDir: '.next',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
+  webpack: (config) => {
+    return config;
+  },
 }
 
 module.exports = nextConfig 

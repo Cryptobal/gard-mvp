@@ -12,9 +12,12 @@ export const metadata: Metadata = {
   title: 'GARD MVP',
   description: 'Sistema MVP de GARD',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.ico', sizes: '32x32' }
+    ],
+    shortcut: ['/favicon.ico'],
+    apple: [{ url: '/favicon.ico' }],
   },
 }
 
@@ -28,6 +31,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        {/* Previene el 404 por favicon en la raíz */}
+        <link rel="icon" href="https://gard-mvp.vercel.app/favicon.ico" />
       </head>
       <body className={`${inter.className} min-h-screen`}>
         <Providers>
