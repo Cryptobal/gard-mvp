@@ -1,0 +1,5 @@
+run = "uvicorn main:app --reload"
+language = "python3"
+
+[env]
+PYTHONPATH = "/home/runner/${REPL_SLUG}" 
